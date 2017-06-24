@@ -1,0 +1,28 @@
+<%= form_for @user do | f |%>
+  <table class="table">
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :email %></td>
+      <td><%= f.email_field :email %></td>
+    </tr>
+    <!-- <tr>
+      <td><%= f.label :password %></td>
+      <td><%= f.text_field :password %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :confirm_password %></td>
+      <td><%= f.text_field :confirm_password %></td>
+    </tr> -->
+    <tr>
+      <td><%= f.submit "Update", :class=> "btn btn-primary"%></td>
+      <td></td>
+   </tr>
+  </table>
+<%end%>
+<%= link_to "See all records", users_path%>
+<!--
+_path => /users
+_url => http://localhost:3000/users -->
