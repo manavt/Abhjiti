@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user, only: [:login_form, :sign_in, :new, :create]
   def index
     @users = User.all
   end
@@ -42,11 +43,15 @@ class UsersController < ApplicationController
     @user = User.authenticate(params[:email], params[:password]).last
     if @user
        session[:user_id] = @user.id# session
-       redirect_to root_path
+       redirect_to users_path
        # go to the home page with session
      else
        render :new
     end
+  end
+  def logout
+    session[:user_id] =  nil
+    redirect_to root_path
   end
   private
   def user_params
