@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user
   # authenticate_user will execute before every action comes from cliest ans request
+
   def  authenticate_user
      if session[:user_id].blank?
       redirect_to root_path

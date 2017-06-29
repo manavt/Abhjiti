@@ -74,3 +74,12 @@ Helper
 Validation   - validate a user form.
 
 Note : server side validation .
+
+icloud-content-sre-ops@group.apple.com
+
+
+
+Execute SQl query from rails console
+
+ActiveRecord::Base.connection.select_on/select_all # for select
+ActiveRecord::Base.connection.execute() # for update and insert 

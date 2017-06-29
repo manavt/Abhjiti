@@ -36,7 +36,8 @@ class UsersController < ApplicationController
   end
   def destroy
     @user = User.find params[:id]
-    @user.delete
+    # call_method = User.take_backup
+     @user.destroy #if call_method
     redirect_to  root_path
   end
   def sign_in
@@ -46,7 +47,7 @@ class UsersController < ApplicationController
        redirect_to users_path
        # go to the home page with session
      else
-       render :new
+       render :login_form
     end
   end
   def logout
