@@ -14,4 +14,7 @@ class ApplicationController < ActionController::Base
     user = User.find session[:user_id]
     "Logged in as #{user.email}"
   end
+  def testing_with_git
+     "A wolf"
+  end
 end
